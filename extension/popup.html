@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local File Converter</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Local Converter</h1>
+          <p id="serverStatus" class="status checking">Checking local helper...</p>
+        </div>
+        <button id="refreshButton" class="icon-button" type="button" title="Check helper again" aria-label="Check helper again">R</button>
+      </header>
+
+      <section id="dropZone" class="drop-zone">
+        <input id="fileInput" type="file" multiple>
+        <div class="drop-copy">
+          <strong>Choose files</strong>
+          <span>or drop them here</span>
+        </div>
+      </section>
+
+      <section class="selected">
+        <div class="section-title">
+          <span>Files</span>
+          <button id="clearButton" type="button">Clear</button>
+        </div>
+        <ul id="fileList" class="file-list">
+          <li class="empty">No files selected</li>
+        </ul>
+      </section>
+
+      <label class="field">
+        <span>Convert to</span>
+        <select id="targetFormat">
+          <option value="pdf">PDF</option>
+          <option value="html">HTML</option>
+          <option value="png">PNG</option>
+          <option value="jpg">JPG</option>
+          <option value="webp">WEBP</option>
+          <option value="bmp">BMP</option>
+          <option value="tiff">TIFF</option>
+        </select>
+      </label>
+
+      <button id="convertButton" class="primary" type="button" disabled>Convert</button>
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
